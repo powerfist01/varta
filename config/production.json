@@ -1,0 +1,10 @@
+{
+    "dbURL":"mongodb://powerfist01:mypassword123@ds231207.mlab.com:31207/varta",
+    "sessionSecret":"ASDFGHJKLLLJGFSSDFGHJGFDFGHBGHHBHNHN",
+    "fb":{
+        "appID": "2090641507902816",
+        "appSecret": "00cd4fcd02dea0fb84dacb5c83d71618",
+        "callbackURL": "http://localhost:5000/auth/facebook/callback"
+    },
+    "host":""
+}

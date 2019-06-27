@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel = "stylesheet" href="../css/bootstrap.min.css">
+        <link rel = "stylesheet" href="../css/style.css">
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            $(function(){
+                var host = '{{config.host}}';
+                var socket = io.connect(host + '/roomlist');
+
+                socket.on('connect',function(){
+                    console.log('Connection Established!');
+                })
+
+                socket.on('roomupdate',function(data){
+                    var procData = JSON.parse(data);
+                    $('.roomList').html('');
+                    for(var i = 0; i < procData.length ;i++){
+                        var str = '<a href="room/' + procData[i].room_number + '"><li>' + procData[i].room_name +  '</li></a>'; 
+                        $('.roomList').prepend(str);
+                    }
+                })
+
+                $(document).on('click','#create',function(){
+                    console.log('button was clicked!');
+                    var room_name = $('.newRoom').val();
+                    if(room_name!=''){
+                        var room_number = parseInt(Math.random() * 10000);
+                        socket.emit('newroom',{room_name : room_name,room_number : room_number});
+                        $('.newRoom').val('');
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title"></h1>
+            <div class="userbox">
+                <img src="{{user.profilePic}}" alt="img" class="userPic">
+                <h3 class="userName"> {{user.fullName}} | <a href="/logout">Logout</a></h3>
+            </div>
+            <h2  id="header"></h2>
+            <div>
+                <input type="text" class="newRoom">
+                <button id="create">Create Room</button>
+            </div>
+            <div>
+                <ul class="roomList" style="text-decoration: none;">
+                    <!--<a href="#"><li>Node</li></a>
+                    <a href="#"><li>Express</li></a>-->
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
