@@ -17,7 +17,7 @@
 
                 socket.on('roomupdate',function(data){
                     var procData = JSON.parse(data);
-                    $('.roomList').html('');
+                    $('.roomList').html(' ');
                     for(var i = 0; i < procData.length ;i++){
                         var str = '<a href="room/' + procData[i].room_number + '"><li>' + procData[i].room_name +  '</li></a>'; 
                         $('.roomList').prepend(str);
