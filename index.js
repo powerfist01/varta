@@ -6,7 +6,18 @@ var session = require('express-session');
 var config = require('./config/config.js');
 var connectmongo = require('connect-mongo')(session);
 var mongoose = require('mongoose')
+mongoose.Promise = global.Promise;
 mongoose.connect(config.dbURL, { useNewUrlParser: true });
+
+var db = mongoose.connection;
+db.on('error', function (err) {
+    throw err;
+});
+
+db.once('open', function () {
+    console.log('Connected to database!');
+})
+
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var rooms = [] 
