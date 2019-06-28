@@ -4,7 +4,7 @@
     "fb":{
         "appID": "2090641507902816",
         "appSecret": "00cd4fcd02dea0fb84dacb5c83d71618",
-        "callbackURL": "http://localhost:5000/auth/facebook/callback"
+        "callbackURL": "https://vaartaa.herokuapp.com/auth/facebook/callback"
     },
-    "host":"http://localhost:5000"
+    "host":"https://vaartaa.herokuapp.com/"
 }
