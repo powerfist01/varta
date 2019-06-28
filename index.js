@@ -39,12 +39,13 @@ if(env === 'development'){
 
 }else{	        
 	//prod specific settings
-	app.use(session({secret: config.sessionSecret, 
+	app.use(session({
+		secret: config.sessionSecret, 
 		saveUninitialized : true,
 		resave : true,
 		store : new connectmongo({
 			//url:config.dbURL,
-			mongoose_connection: mongoose.connections[0],
+			mongooseConnection: mongoose.connections[0],	
 			stringify : true
 		})
 	}));
