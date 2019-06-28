@@ -9,7 +9,7 @@ var mongoose = require('mongoose')
 mongoose.connect(config.dbURL, { useNewUrlParser: true });
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var rooms = []
+var rooms = [] 
  
 app.set('views',path.join(__dirname, 'views')); 
  
