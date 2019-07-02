@@ -6,5 +6,5 @@
         "appSecret": "00cd4fcd02dea0fb84dacb5c83d71618",
         "callbackURL": "https://vaartaa.herokuapp.com/auth/facebook/callback"
     },
-    "host":"https://vaartaa.herokuapp.com/"
+    "host":"https://vaartaa.herokuapp.com"
 }

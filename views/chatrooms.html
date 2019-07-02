@@ -17,6 +17,7 @@
 
                 socket.on('roomupdate',function(data){
                     var procData = JSON.parse(data);
+                    console.log(procData);
                     $('.roomList').html(' ');
                     for(var i = 0; i < procData.length ;i++){
                         var str = '<a href="room/' + procData[i].room_number + '"><li>' + procData[i].room_name +  '</li></a>'; 
@@ -29,7 +30,7 @@
                     if(room_name!=''){
                         var room_number = parseInt(Math.random() * 10000);
                         socket.emit('newroom',{room_name : room_name,room_number : room_number});
-                        $('.newRoom').val('');
+                        $('.newRoom').val(' ');
                     }
                 })
             })
@@ -49,8 +50,6 @@
             </div>
             <div>
                 <ul class="roomList" style="text-decoration: none;">
-                    <!--<a href="#"><li>Node</li></a>
-                    <a href="#"><li>Express</li></a>-->
                 </ul>
             </div>
         </div>
