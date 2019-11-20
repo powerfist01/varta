@@ -1,0 +1,27 @@
+{
+	"db": {
+		"username": "powerfist01",
+		"password": "helloworld",
+		"host": "localhost",
+		"port": "27017",
+		"name": "chatapp"
+	},
+	"sessionSecret": "AHSJSJAOSOXASDFGHJKLLLJGFSSDFGHJGFDFGHBGHHBHNHN",
+	"facebook": {
+		"clientID": "2090641507902816",
+		"clientSecret": "00cd4fcd02dea0fb84dacb5c83d71618",
+		"callbackURL": "https://vaartaa.herokuapp.com/auth/facebook/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"twitter": {
+		"consumerKey": "<ConsumerKey>",
+		"consumerSecret": "<ConsumerSecret>",
+		"callbackURL": "/auth/twitter/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"password": ""
+	}
+}
